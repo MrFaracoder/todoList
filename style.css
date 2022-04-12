@@ -1,0 +1,45 @@
+body {
+    background-color: dodgerblue;
+}
+#conta{
+    background-color: white;
+    padding: 15px;
+}
+ul{
+    margin: 0;
+}
+.box{
+    padding: 15px;
+    background-color: rgb(245, 245, 241);
+    margin: 5px;
+    border: solid rgb(188, 188, 179);
+    cursor: pointer;
+}
+.input{
+    font-size: 25px;
+    margin: 0;
+    margin-left: 20px;
+    height: 70px;
+    
+}
+.btnn{
+  display: flex;
+  justify-content: end;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.btn{
+    margin-left: 20px;
+}
+#info{
+    margin: 20px;
+}
+a {
+    width: 70px;
+}
+
+.done {
+    text-decoration: line-through;
+    background-color: rgb(207, 118, 194);
+  }

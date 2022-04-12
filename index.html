@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="foundation.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>todolist</title>
+</head>
+<body>
+    <div id="App">
+        <h1 class="text-center Primary">{{msg}}</h1>
+
+        <div class="grid-container" id="conta">
+            <form>
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                        <div class="medium-8 cell">
+                            <input type="text" v-model="AddNewList" placeholder="what neads to be done?" class="input" >
+                            <textarea name="info" id="info" cols="10" rows="3" placeholder="this is info" v-model="dec"></textarea>
+                            <button class="submit success button medium-1" v-on:click.prevent="addDolist()" v-if="AddNewList.length > 0">add list</button>
+
+                            <button :class="['submit button medium-1 btn',{Primary:showDesk},{success:!showDesk}]" @click="showDesk =    !showDesk">toggel done</button>
+
+                            <button class="submit black button medium-1 btn" @click="trash()">remove item</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="grid-container">
+                <ul class="vertical menu">
+                    <li :class="['box',{done:title.completed}]" v-for="(title , i) in todoList" :key="i" @click="title.completed = !title.completed"><input type="checkbox" @click="trash()">{{title.title}}
+                        <br>
+                        <small v-if="showDesk">{{title.info}}</small>
+                    <a href="#" @click=" trash()"><img src="img/icons8-trash.svg" alt="#"></a>
+                    </li> 
+                </ul>
+            </div>
+            
+        </div>
+        
+    </div>
+    <script src="vue.global.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
